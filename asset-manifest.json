@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Cv-Felipe/build/static/css/main.4a1fa03f.css",
-    "main.js": "/Cv-Felipe/build/static/js/main.6046f91e.js",
+    "main.css": "/Cv-Felipe/build/static/css/main.bb1f3a38.css",
+    "main.js": "/Cv-Felipe/build/static/js/main.0093a918.js",
     "static/js/453.5333ad58.chunk.js": "/Cv-Felipe/build/static/js/453.5333ad58.chunk.js",
-    "static/media/logo.svg": "/Cv-Felipe/build/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/bmo.png": "/Cv-Felipe/build/static/media/bmo.522e61f60cc021205da8.png",
     "index.html": "/Cv-Felipe/build/index.html",
-    "main.4a1fa03f.css.map": "/Cv-Felipe/build/static/css/main.4a1fa03f.css.map",
-    "main.6046f91e.js.map": "/Cv-Felipe/build/static/js/main.6046f91e.js.map",
+    "main.bb1f3a38.css.map": "/Cv-Felipe/build/static/css/main.bb1f3a38.css.map",
+    "main.0093a918.js.map": "/Cv-Felipe/build/static/js/main.0093a918.js.map",
     "453.5333ad58.chunk.js.map": "/Cv-Felipe/build/static/js/453.5333ad58.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a1fa03f.css",
-    "static/js/main.6046f91e.js"
+    "static/css/main.bb1f3a38.css",
+    "static/js/main.0093a918.js"
   ]
 }
