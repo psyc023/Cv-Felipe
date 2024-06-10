@@ -30,28 +30,31 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px' }}>
+    <div className="bg-black min-h-screen text-white flex justify-center items-center p-4">
       {/* Experience Column */}
-      <div style={{ flex: 1, textAlign: 'left', margin: '0 auto', maxWidth: '800px' }}>
-        <h2 style={{ color: '#22c55e', textAlign: 'center', fontSize: '30px', marginBottom: '20px' }}>Experience</h2>
+      <div className="w-full max-w-3xl mx-auto text-left">
+        <h2 className="text-green-500 text-center text-2xl mb-5">Experience</h2>
         {experienceData.map((exp, index) => (
           <motion.div
             key={index}
             whileHover={{ color: '#22c55e' }}
-            style={{ marginBottom: '20px', borderLeft: '5px solid white', paddingLeft: '10px' }}
+            className="mb-5 border-l-4 border-white pl-3"
           >
-            <p style={{ marginBottom: '5px', fontWeight: 'bold', fontSize: '20px', color: '#22c55e', textAlign: 'center' }}>{exp.title}</p>
-            <p style={{ marginBottom: '5px', color: '#22c55e', textAlign: 'center' }}>{exp.period}</p>
-            <p style={{ marginBottom: '5px', color: '#22c55e', textAlign: 'center', fontWeight: 'bold' }}>{exp.company}</p>
+            <p className="mb-2 font-bold text-xl text-green-500 text-center">{exp.title}</p>
+            <p className="mb-2 text-green-500 text-center">{exp.period}</p>
+            <p className="mb-2 text-green-500 text-center font-bold">{exp.company}</p>
             {expanded && (
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '20px' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {exp.description.split('\n').map((line, i) => (
                   <p key={i}>{line}</p>
                 ))}
               </div>
             )}
-            <button onClick={handleExpand} style={{ color: '#ff9900', backgroundColor: 'transparent', border: 'none', cursor: 'pointer', marginLeft: '10px', display: 'block', margin: '0 auto' }}>
-              {expanded ? 'Mostrar menos' : 'Mostrar más'}
+            <button
+              onClick={handleExpand}
+              className="text-orange-500 bg-transparent border-none cursor-pointer mt-3 block mx-auto"
+            >
+              {expanded ? 'Show less' : 'Show more'}
             </button>
           </motion.div>
         ))}
@@ -61,3 +64,4 @@ const Experience: React.FC = () => {
 };
 
 export default Experience;
+

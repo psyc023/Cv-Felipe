@@ -5,6 +5,9 @@ import './css/About.css';
 const About: React.FC = () => {
   return (
     <div className="about-container">
+        <div className="about-img-container">
+        <img className="about-img" src={bmopng} alt="BMO" />
+      </div>
       <div className="about-text">
         <p style={{ fontSize: 35, color: 'white', fontWeight: 'bold' }}>Hi There! I'm Felipe Canseco</p>
         <p style={{ fontSize: 30, color: '#22c55e', marginBottom: '20px' }}>Full stack developer</p>
@@ -17,9 +20,7 @@ const About: React.FC = () => {
         <p style={{ fontSize: 20, color: 'white' }}>Location: Oaxaca, Mexico</p>
         <p style={{ fontSize: 20, color: 'white' }}>Remote: Available</p>
       </div>
-      <div className="about-img-container">
-        <img className="about-img" src={bmopng} alt="BMO" />
-      </div>
+      
     </div>
   );
 };

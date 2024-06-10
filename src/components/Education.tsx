@@ -11,7 +11,7 @@ const Education: React.FC = () => {
   return (
     <div style={{ 
       backgroundColor: 'black', 
-      minHeight: '100vh', 
+     
       color: 'white', 
       display: 'grid', 
       gridTemplateColumns: 'auto auto', // Dos columnas de ancho automático
