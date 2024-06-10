@@ -18,11 +18,11 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: 'white', padding: '20px' }}>
-      <div style={{ maxWidth: '600px', marginLeft: '20px' }}>
-        <h2 style={{ color: '#22c55e', textAlign: 'left', fontSize: '35px', marginBottom: '20px' }}>Skills</h2>
+    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: 'white', padding: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ maxWidth: '600px', textAlign: 'center' }}>
+        <h2 style={{ color: '#22c55e', fontSize: '35px', marginBottom: '20px' }}>Skills</h2>
         {skillsData.map((skill, index) => (
-          <div key={index} style={{ marginBottom: '20px' }}>
+          <div key={index} style={{ marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p style={{ color: '#22c55e', marginBottom: '5px', textAlign: 'left' }}>{skill}</p>
             <motion.div
               style={{ backgroundColor: '#22c55e', height: '20px', borderRadius: '10px', width: '100vw' }}

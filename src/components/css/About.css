@@ -1,0 +1,31 @@
+/* Estilos CSS */
+.about-container {
+    display: flex;
+    background-color: black;
+    color: white;
+  }
+  
+  .about-text {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .about-img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-img {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 576px) {
+    .about-container {
+      flex-direction: column;
+    }
+  }
+  
