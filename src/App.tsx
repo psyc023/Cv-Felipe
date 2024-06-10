@@ -8,6 +8,8 @@ import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import AppBar from './components/AppBar/AppBar';
+import Education from './components/Education';
+import Experience from './components/Experience';
 
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -38,22 +40,31 @@ function App() {
     <div className="App overflow-hidden">
       <AppBar activeSection={activeSection} />
       <main>
-        <Section title="Home" id="Home" className="text-white bg-black">
+        <Section title="Home" id="Home">
           <Home />
         </Section>
-        <Section title="About" id="About" className="text-white bg-black">
+
+        <Section title="About" id="About">
           <About />
         </Section>
-        <Section title="Resume" id="Resume" className="text-white bg-black">
-          <Resume />
+
+        <Section title="Education" id="Education">
+          <Education />
         </Section>
-        <Section title="Skills" id="Skills" className="text-white bg-black">
+
+        <Section title="Experience" id="Experience">
+          <Experience />
+        </Section>
+
+        <Section title="Skills" id="Skills">
           <Skills />
         </Section>
-        <Section title="Portfolio" id="Portfolio" className="text-white bg-black">
+
+        <Section title="Portfolio" id="Portfolio">
           <Portfolio />
         </Section>
-        <Section title="Contact" id="Contact" className="text-white bg-black">
+
+        <Section title="Contact" id="Contact">
           <Contact />
         </Section>
       </main>
