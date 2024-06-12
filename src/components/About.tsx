@@ -15,13 +15,13 @@ const About: React.FC = () => {
           As a Full Stack Developer, I bring extensive experience in software engineering, development, and technical support across diverse platforms and technologies. My career has been highlighted by roles at prestigious companies like Samsung Electronics, where I honed my skills in both front-end and back-end development and testing.
         </p>
         <p style={{ fontSize: 20, color: 'white', marginBottom: '10px' }}>Phone: +52 951 114 9349</p>
-        <p style={{ fontSize: 20, color: 'white', marginBottom: '10px' }}>Email: felipejcl@gmail.com</p>
+        <p style={{ fontSize: 20, color: 'white', marginBottom: '10px' }}>Email: felipe95jcl@gmail.com</p>
         <p style={{ fontSize: 20, color: 'white', marginBottom: '10px' }}>Languages: English, Spanish, Japanese, German</p>
         <p style={{ fontSize: 20, color: 'white' }}>Location: Oaxaca, Mexico</p>
         <p style={{ fontSize: 20, color: 'white' }}>Remote: Available</p>
       </div>
       
-    </div>
+    </div >
   );
 };
 

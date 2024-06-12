@@ -18,9 +18,10 @@ const Home: React.FC = () => {
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <motion.img
           src={bmopng}
-          initial={{ scale: 0, filter: 'brightness(0)' }}
-          animate={{ scale: 1, filter: 'brightness(1)', y: [0, -20, 0] }}
+          initial={{ y: 0 }}
+          animate={{ y: [0, -20, 0] }}
           transition={{ duration: 1, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
+          style={{ width: 'auto', height: 'auto' }} // Ajusta el tamaño de la imagen si es necesario
         />
       </div>
     </div>
