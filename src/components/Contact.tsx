@@ -60,17 +60,17 @@ const Contact: React.FC = () => {
           <div className="flex space-x-4">
             <a href="www.linkedin.com/in/felipe-canseco-lopez" target="_blank" rel="noopener noreferrer">
               <button className="bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-600 flex items-center text-lg">
-                <FaLinkedin className="mr-2 text-xl" /> LinkedIn
+                <FaLinkedin className="mr-2 text-xl" /> 
               </button>
             </a>
             <a href="https://wa.me/529511149349" target="_blank" rel="noopener noreferrer">
               <button className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-400 flex items-center text-lg">
-                <FaWhatsapp className="mr-2 text-xl" /> WhatsApp
+                <FaWhatsapp className="mr-2 text-xl" /> 
               </button>
             </a>
             <a href="https://github.com/psyc023" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 flex items-center text-lg">
-                <FaGithub className="mr-2 text-xl" /> GitHub
+                <FaGithub className="mr-2 text-xl" /> 
               </button>
             </a>
           </div>

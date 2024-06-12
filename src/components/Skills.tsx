@@ -24,7 +24,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen text-white p-5 flex justify-center items-center">
+    <div className="bg-black min-h-screen text-white p-5 flex justify-center items-center p-10">
       <div className="max-w-2xl w-full text-center">
         <h2 className="text-green-500 text-3xl mb-5">Skills</h2>
         {skillsData.map((skillData, index) => (

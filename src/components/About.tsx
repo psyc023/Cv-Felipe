@@ -4,7 +4,7 @@ import './css/About.css';
 
 const About: React.FC = () => {
   return (
-    <div className="about-container">
+    <div className="about-container p-10 ">
         <div className="about-img-container">
         <img className="about-img" src={bmopng} alt="BMO" />
       </div>

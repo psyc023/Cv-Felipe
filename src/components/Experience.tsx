@@ -30,7 +30,7 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <div className="bg-black min-h-screen text-white flex justify-center items-center p-4">
+    <div className="bg-black min-h-screen text-white flex justify-center items-center p-10">
       {/* Experience Column */}
       <div className="w-full max-w-3xl mx-auto text-left">
         <h2 className="text-green-500 text-center text-2xl mb-5">Experience</h2>
