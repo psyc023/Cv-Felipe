@@ -74,7 +74,7 @@ const Education: React.FC = () => {
         <h2 style={{ color: '#22c55e', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>Download CV</h2>
         <div style={{ textAlign: 'center' }}>
           <div>
-            <a href="/static/media/FelipeCansecoEn.pdf" download>
+            <a href="https://psyc023.github.io/Cv-Felipe/build/FelipeCansecoEn.pdf" download>
               <motion.button whileHover={{ backgroundColor: '#22c55e', color: '#fff' }} 
                 style={{ 
                   color: '#22c55e', 
@@ -89,7 +89,7 @@ const Education: React.FC = () => {
                 English CV
               </motion.button>
             </a>
-            <a href="/static/media/FelipeCansecoEs.pdf" download>
+            <a href="https://psyc023.github.io/Cv-Felipe/build/FelipeCansecoEs.pdf" download>
               <motion.button whileHover={{ backgroundColor: '#22c55e', color: '#fff' }} 
                 style={{ 
                   color: '#22c55e', 

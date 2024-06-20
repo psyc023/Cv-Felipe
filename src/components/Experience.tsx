@@ -50,12 +50,47 @@ const Experience: React.FC = () => {
                 ))}
               </div>
             )}
-            <button
+            <motion.button
               onClick={handleExpand}
-              className="text-orange-500 bg-transparent border-none cursor-pointer mt-3 block mx-auto"
+              className="text-orange-500 bg-transparent border-none cursor-pointer mt-3 block mx-auto flex items-center"
+              whileHover={{ color: '#22c55e' }}
             >
-              {expanded ? 'Show less' : 'Show more'}
-            </button>
+              {expanded ? (
+                <>
+                  Show less
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 12.586l4.293-4.293a1 1 0 011.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 12.586z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </>
+              ) : (
+                <>
+                  Show more
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 7.414L5.707 11.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 11-1.414 1.414L10 7.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </>
+              )}
+            </motion.button>
           </motion.div>
         ))}
       </div>
@@ -64,4 +99,3 @@ const Experience: React.FC = () => {
 };
 
 export default Experience;
-
