@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import Section from './components/Section'; // Asegúrate de importar el componente
 import Home from './components/Home';
 import About from './components/About';
-import Resume from './components/Resume';
 import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import AppBar from './components/AppBar/AppBar';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import { throttle } from 'lodash';
 
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['Home', 'About', 'Resume', 'Skills', 'Portfolio', 'Contact'];
+    const handleScroll = throttle(() => {
+      const sections = ['Home', 'About', 'Education', 'Experience', 'Skills', 'Portfolio', 'Contact'];
       const scrollPosition = window.scrollY;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         const element = document.getElementById(section);
-        if (element && element.offsetTop <= scrollPosition) {
+        if (element && element.offsetTop <= scrollPosition + 50) {
           setActiveSection(section);
           break;
         }
       }
-    };
+    }, 200);
 
     document.addEventListener('scroll', handleScroll);
 

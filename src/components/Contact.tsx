@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Información de Contacto */}
-        <div className="flex-1 lg:ml-5 mt-10 lg:mt-0 text-lg">
+        <div className="flex-1 lg:ml-5 mt-10 lg:mt-0 text-lg ">
           <h3 className="text-2xl mb-5">Contact Info</h3>
           <p className="mb-5">You can contact me via email or WhatsApp from Monday to Friday, 10am to 4pm.</p>
           <p className="mb-2 flex items-center text-lg">
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
           </p>
           <p className="mb-5">Visit my social profile and get connected:</p>
           <div className="flex space-x-4">
-            <a href="www.linkedin.com/in/felipe-canseco-lopez" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/felipe-canseco-lopez/" target="_blank" rel="noopener noreferrer">
               <button className="bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-600 flex items-center text-lg">
                 <FaLinkedin className="mr-2 text-xl" /> 
               </button>
