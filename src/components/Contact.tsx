@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_1x0hxgo', 'template_vl1stde', form.current!, 'Zd2oFkbjgcKcubXRC')
+      .then((result) => {
+          console.log(result.text);
+          alert('Message sent successfully!');
+      }, (error) => {
+          console.log(error.text);
+          alert('Failed to send message, please try again later.');
+      });
+
+    if (form.current) {
+      form.current.reset(); // Reset form after submission
+    }
+  };
+
   return (
     <div className="bg-black min-h-screen text-white p-10">
       <h2 className="text-4xl text-center mb-10">Contact</h2>
@@ -9,32 +29,36 @@ const Contact: React.FC = () => {
         {/* Formulario de Contacto */}
         <div className="flex-1 lg:mr-5">
           <h3 className="text-2xl mb-5 text-green-500">Say Hello</h3>
-          <form className="space-y-4 text-lg">
+          <form ref={form} onSubmit={sendEmail} className="space-y-4 text-lg">
             <input
               className="w-full p-2 bg-gray-700 text-white text-lg"
               type="text"
+              name="name"
               placeholder="Name"
               required
             />
             <input
               className="w-full p-2 bg-gray-700 text-white text-lg"
               type="email"
+              name="email"
               placeholder="Email"
               required
             />
             <input
               className="w-full p-2 bg-gray-700 text-white text-lg"
               type="text"
+              name="subject"
               placeholder="Subject"
               required
             />
             <textarea
               className="w-full p-2 bg-gray-700 text-white text-lg"
+              name="message"
               placeholder="Your message"
               rows={5}
               required
             />
-            <button className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 text-lg">
+            <button type="submit" className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 text-lg">
               Send Message
             </button>
           </form>
@@ -81,4 +105,3 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
-
