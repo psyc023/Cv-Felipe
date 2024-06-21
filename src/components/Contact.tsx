@@ -33,28 +33,21 @@ const Contact: React.FC = () => {
             <input
               className="w-full p-2 bg-gray-700 text-white text-lg"
               type="text"
-              name="name"
-              placeholder="Name"
+              name="name" // Nombre del campo debe coincidir con {{name}} en la plantilla
+              placeholder="Your Name"
               required
             />
             <input
               className="w-full p-2 bg-gray-700 text-white text-lg"
               type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-            <input
-              className="w-full p-2 bg-gray-700 text-white text-lg"
-              type="text"
-              name="subject"
-              placeholder="Subject"
+              name="email" // Nombre del campo debe coincidir con {{email}} en la plantilla
+              placeholder="Your E-mail"
               required
             />
             <textarea
               className="w-full p-2 bg-gray-700 text-white text-lg"
-              name="message"
-              placeholder="Your message"
+              name="message" // Nombre del campo debe coincidir con {{message}} en la plantilla
+              placeholder="Message"
               rows={5}
               required
             />
