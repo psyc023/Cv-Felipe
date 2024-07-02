@@ -10,9 +10,27 @@ const Experience: React.FC = () => {
 
   const experienceData = [
     {
+      title: 'Full Stack Developer',
+      company: 'Upax Grupo Salinas',
+      period: '06/2023 - 06/2024',
+      description: ` • Development and Technical Support 
+• Experience in testing and developing TV and Android applications (Tizen, Android) 
+• App code modification (Front)
+• Project documentation 
+• Version control tools like Git and Gogs for efficient code management and collaboration. Skilled in documenting projects to ensure clarity and maintain comprehensive records. 
+• Experience with HTML5, CSS, and Vue.js in application development. 
+• .NET, .NET Core, Entity Framework, and LINQ for development. 
+• Experience with AWS services
+• Windows Services Experience. 
+• IIS
+• API Experience consuming and developing, using JavaScript (JS), (TS) and ASP. 
+• C++ development
+`,
+    },
+    {
       title: 'Software Engineer',
       company: 'Samsung Electronics (SRT Samsung Research Tijuana)',
-      period: '04/2022 - 02/2024',
+      period: '04/2022 - 05/2023',
       description: `Development and Technical Support\n• Testing\n• Experience in testing and developing TV and Android applications (Tizen, Android)\n• Led Metadata research for an IoT application, collaborating on the development and implementation of metadata functionality.\n• TAM (Technical Account Manager): Gathering partner requirements (scope, timeline, etc.) Managing the timely release of the application, providing technical support in case of any issues during app implementation.\n• Support for launching all US and LATAM applications for new products\n• App code modification\n• Project documentation\n• Version control tools like Git and Gogs for efficient code management and collaboration. Skilled in documenting projects to ensure clarity and maintain comprehensive records.\n• Software Management: Proficient in administering programs like Magic Info and Knox for real-time screen monitoring, updating, modifying, and deploying applications.\n• Experience with HTML5, CSS, and Vue.js in application development.\n• .NET, .NET Core, Entity Framework, and LINQ for development.\n• Experience with AWS services (EC2, RDS, Lambda, CloudWatch, API Gateway) including database migration to zoho CRM.`,
     },
     {
