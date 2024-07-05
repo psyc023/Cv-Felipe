@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import AppBar from './components/AppBar/AppBar';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import Languages from './components/Languages';
 import { throttle } from 'lodash';
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
     <div className="App overflow-hidden">
       <AppBar activeSection={activeSection} />
       <main>
+      <Section title="Languages" id="Languages">
+          <Languages />
+        </Section>
+
         <Section title="Home" id="Home">
           <Home />
         </Section>

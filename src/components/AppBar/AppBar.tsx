@@ -19,7 +19,7 @@ const AppBar: React.FC<AppBarProps> = ({ activeSection }) => {
   return (
     <nav className="app-bar bg-black text-white fixed top-0 right-0 w-full h-16 flex items-center justify-between p-4 z-50">
       <div className="flex items-center">
-        <span className="text-xl font-bold">CV</span>
+        <span className="text-xl font-bold">Welcome to my CV</span>
       </div>
       <div className="block lg:hidden">
         <button onClick={toggleMenu} className="text-white focus:outline-none">
