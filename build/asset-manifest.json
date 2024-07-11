@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Cv-Felipe/build/static/css/main.9283c96f.css",
-    "main.js": "/Cv-Felipe/build/static/js/main.6fec9e5a.js",
+    "main.css": "/Cv-Felipe/build/static/css/main.f5cfdb10.css",
+    "main.js": "/Cv-Felipe/build/static/js/main.5caa17ff.js",
     "static/js/453.5333ad58.chunk.js": "/Cv-Felipe/build/static/js/453.5333ad58.chunk.js",
     "static/media/feli.png": "/Cv-Felipe/build/static/media/feli.edfc7aebf6693809f4fe.png",
     "static/media/bmo.png": "/Cv-Felipe/build/static/media/bmo.522e61f60cc021205da8.png",
     "index.html": "/Cv-Felipe/build/index.html",
-    "main.9283c96f.css.map": "/Cv-Felipe/build/static/css/main.9283c96f.css.map",
-    "main.6fec9e5a.js.map": "/Cv-Felipe/build/static/js/main.6fec9e5a.js.map",
+    "main.f5cfdb10.css.map": "/Cv-Felipe/build/static/css/main.f5cfdb10.css.map",
+    "main.5caa17ff.js.map": "/Cv-Felipe/build/static/js/main.5caa17ff.js.map",
     "453.5333ad58.chunk.js.map": "/Cv-Felipe/build/static/js/453.5333ad58.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9283c96f.css",
-    "static/js/main.6fec9e5a.js"
+    "static/css/main.f5cfdb10.css",
+    "static/js/main.5caa17ff.js"
   ]
 }
