@@ -13,7 +13,6 @@ const Home: React.FC = () => {
 
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh', color: 'white', display: 'flex' }}>
- 
       {/* Columna izquierda*/}
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'left' }}>
