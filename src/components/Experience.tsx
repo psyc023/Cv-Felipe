@@ -65,24 +65,31 @@ const Experience: React.FC = () => {
 
   return (
     <div className="bg-black min-h-screen text-white flex justify-center items-center p-10">
-      {/* Experience Column */}
       <div className="w-full max-w-3xl mx-auto text-left">
         <h5 className="text-green-500 text-center text-2xl mb-5 font-bold">EXPERIENCE</h5>
         {experienceData.map((exp, index) => (
           <motion.div
             key={index}
             whileHover={{ color: '#22c55e' }}
-            className="mb-5 flex"
+            className="mb-5 flex flex-col sm:flex-row sm:items-start"
           >
-            {/* Fecha (Período) en el lado izquierdo */}
-            <div className="w-32 text-xl text-white-500 flex items-center">
+            {/* Para móviles el diseño anterior */}
+            <div className="sm:hidden mb-2">
+              <p className="text-green-500 font-bold text-center">{exp.title}</p>
+              <p className="text-center">{exp.period}</p>
+              <p className="text-center font-bold">{exp.company}</p>
+            </div>
+
+            {/* Para pantallas grandes (PC) */}
+            <div className="hidden sm:flex w-32 text-xl text-white-500 items-center">
               <p>{exp.period}</p>
             </div>
 
-            {/* Borde y contenido */}
             <div className="border-l-4 border-white text-white-500 pl-3 flex-1 mx-10">
-              <p className="mb-2 text-xl text-green-500 text-center font-bold">{exp.company}</p>
-              <p className="mb-2 font-bold text-xl text-white-500  text-center">{exp.title}</p>
+              <p className="mb-2 text-xl text-green-500 text-center font-bold hidden sm:block">
+                {exp.company}
+              </p>
+              <p className="mb-2 font-bold text-xl text-center hidden sm:block">{exp.title}</p>
 
               {/* Descripción expandida */}
               {expandedIndex === index && (
