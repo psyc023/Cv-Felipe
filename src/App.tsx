@@ -10,7 +10,7 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Languages from './components/Languages';
 import { throttle } from 'lodash';
-import FloatingButton from './components/FloatingButton'; 
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -73,7 +73,7 @@ function App() {
           <Contact />
         </Section>
       </main>
-      <FloatingButton /> 
+      
     </div>
   );
 }
