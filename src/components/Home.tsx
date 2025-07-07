@@ -18,7 +18,7 @@ const Home: React.FC = () => {
         <div style={{ textAlign: 'left' }}>
           <p style={{ fontSize: 30, color: 'white' }}>Hello, I'm</p>
           <p style={{ fontSize: 60, color: 'white', fontWeight: 'bold', marginBottom: '10px' }}>Felipe <br /> Canseco</p>
-          <p style={{ fontSize: 30, color: 'rgba(255, 255, 255, 0.5)', fontWeight: 'bold', marginBottom: '20px' }}>Full Stack Developer</p>
+          <p style={{ fontSize: 30, color: 'rgba(255, 255, 255, 0.5)', fontWeight: 'bold', marginBottom: '20px' }}>Sr. Full Stack Developer</p>
           <button
             style={{ backgroundColor: '#22c55e', color: 'black', padding: '10px 20px', fontSize: 20, borderRadius: '20px' }}
             onClick={scrollToContact}
