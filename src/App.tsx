@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import AppBar from './components/AppBar/AppBar';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import MainProjects from './components/MainProjects';
 import Languages from './components/Languages';
 import { throttle } from 'lodash';
 
@@ -17,8 +18,8 @@ function App() {
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      const sections = ['Home', 'About', 'Education', 'Experience', 'Skills', 'Portfolio', 'Contact'];
-      const scrollPosition = window.scrollY;
+        const sections = ['Languages', 'Home', 'About', 'Education', 'Experience', 'MainProjects', 'Skills', 'Portfolio', 'Contact'];
+    const scrollPosition = window.scrollY;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -59,6 +60,10 @@ function App() {
 
         <Section title="Experience" id="Experience">
           <Experience />
+         </Section>
+
+        <Section title="Main Projects" id="MainProjects">
+          <MainProjects />
         </Section>
 
         <Section title="Skills" id="Skills">

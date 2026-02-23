@@ -1,231 +1,332 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaAngleDown } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+
+type SkillLevel = 'Advanced' | 'Proficient' | 'Intermediate';
+
+type SkillCategory =
+  | 'Backend'
+  | 'Cloud'
+  | 'Frontend'
+  | 'Architecture'
+  | 'DevOps'
+  | 'AI'
+  | 'Other';
+
+interface SkillDetail {
+  label: string;
+  percentage: number;
+}
+
+interface Skill {
+  skill: string;
+  level: SkillLevel;
+  category: SkillCategory;
+  details: SkillDetail[];
+}
 
 const Skills: React.FC = () => {
-  const skillsData = [
+  const skillsData: Skill[] = [
     {
       skill: 'C#',
-      level: 'Expert',
+      level: 'Advanced',
+      category: 'Backend',
       details: [
-        { label: 'Syntax and Fundamentals', percentage: 90 },
-        { label: 'API Development and Consumption', percentage: 90 },
-        { label: '4 Years of Experience', percentage: 100 },
-        { label: 'Testing and Debugging', percentage: 100 }
-      ]
+        { label: 'Clean Architecture + DI', percentage: 90 },
+        { label: 'Async/Await + Background processing', percentage: 88 },
+        { label: 'Performance & debugging in production', percentage: 85 },
+        { label: 'Unit/Integration testing', percentage: 82 },
+      ],
     },
     {
-      skill: 'DotNet',
-      level: 'Expert',
+      skill: 'ASP.NET Core / .NET',
+      level: 'Advanced',
+      category: 'Backend',
       details: [
-        { label: 'MVC Framework', percentage: 85 },
-        { label: 'LINQ', percentage: 80 },
-        { label: 'RESTful API', percentage: 85 },
-        { label: 'Azure Integrations', percentage: 75 }
-      ]
+        { label: 'REST APIs (design + implementation)', percentage: 90 },
+        { label: 'AuthN/AuthZ basics (JWT/OAuth)', percentage: 82 },
+        { label: 'EF Core + LINQ query tuning', percentage: 85 },
+        { label: 'Logging + error handling patterns', percentage: 80 },
+      ],
     },
     {
-      skill: 'REST',
-      level: 'Expert',
+      skill: 'SQL Server',
+      level: 'Advanced',
+      category: 'Backend',
       details: [
-        { label: 'API Design', percentage: 90 },
-        { label: 'API Implementation', percentage: 85 },
-        { label: 'API Security', percentage: 80 },
-        { label: 'Performance Testing', percentage: 85 }
-      ]
+        { label: 'Query optimization + indexes', percentage: 85 },
+        { label: 'Stored procedures & troubleshooting', percentage: 82 },
+        { label: 'Relational modeling', percentage: 84 },
+        { label: 'Performance monitoring & fixes', percentage: 78 },
+      ],
     },
     {
-      skill: 'AWS',
-      level: 'Qualified',
+      skill: 'Azure (Functions + Storage)',
+      level: 'Proficient',
+      category: 'Cloud',
       details: [
-        { label: 'EC2', percentage: 70 },
-        { label: 'RDS', percentage: 75 },
-        { label: 'Lambda', percentage: 65 },
-        { label: 'CloudWatch', percentage: 60 }
-      ]
+        { label: 'Azure Functions', percentage: 88 },
+        { label: 'Blob Storage workflows', percentage: 85 },
+        { label: 'Configuration & env flags', percentage: 80 },
+        { label: 'Reliability / retries', percentage: 78 },
+      ],
     },
     {
-      skill: 'Entity Framework',
-      level: 'Qualified',
+      skill: 'Microservices',
+      level: 'Proficient',
+      category: 'Architecture',
       details: [
-        { label: 'Model First Approach', percentage: 80 },
-        { label: 'Code First Approach', percentage: 85 },
-        { label: 'Database Migrations', percentage: 75 },
-        { label: 'Performance Optimization', percentage: 70 }
-      ]
+        { label: 'Service boundaries & contracts', percentage: 82 },
+        { label: 'Distributed workflows', percentage: 80 },
+        { label: 'Idempotency / retries', percentage: 75 },
+        { label: 'REST/GraphQL integration', percentage: 72 },
+      ],
     },
     {
-      skill: 'Python',
-      level: 'Expert',
+      skill: 'System Design / Architecture',
+      level: 'Proficient',
+      category: 'Architecture',
       details: [
-        { label: 'Syntax and Basics', percentage: 95 },
-        { label: 'Web Development', percentage: 90 },
-        { label: 'Data Analysis', percentage: 85 },
-        { label: 'Machine Learning', percentage: 80 }
-      ]
+        { label: 'DDD basics', percentage: 78 },
+        { label: 'Clean Architecture', percentage: 82 },
+        { label: 'Event-driven systems', percentage: 80 },
+        { label: 'Cost/performance tradeoffs', percentage: 75 },
+      ],
     },
     {
-      skill: 'MySQL',
-      level: 'Expert',
+      skill: 'REST APIs',
+      level: 'Advanced',
+      category: 'Backend',
       details: [
-        { label: 'Database Design', percentage: 90 },
-        { label: 'Query Optimization', percentage: 85 },
-        { label: 'Stored Procedures', percentage: 80 },
-        { label: 'Replication Setup', percentage: 75 }
-      ]
+        { label: 'API design', percentage: 88 },
+        { label: 'Security basics', percentage: 80 },
+        { label: 'Caching / pagination', percentage: 78 },
+        { label: 'Testing', percentage: 85 },
+      ],
     },
     {
-      skill: 'CSS',
-      level: 'Expert',
+      skill: 'Docker',
+      level: 'Proficient',
+      category: 'DevOps',
       details: [
-        { label: 'Flexbox Layout', percentage: 85 },
-        { label: 'Grid Layout', percentage: 80 },
-        { label: 'Responsive Design', percentage: 85 },
-        { label: 'Animation and Transitions', percentage: 75 }
-      ]
+        { label: 'Containerizing services', percentage: 80 },
+        { label: 'Local dev env', percentage: 78 },
+        { label: 'Volumes / networking', percentage: 75 },
+        { label: 'Deploy workflows', percentage: 70 },
+      ],
     },
     {
-      skill: 'JavaScript',
-      level: 'Expert',
+      skill: 'CI/CD & Deployments',
+      level: 'Proficient',
+      category: 'DevOps',
       details: [
-        { label: 'ES6+', percentage: 90 },
-        { label: 'Functional Programming', percentage: 85 },
-        { label: 'Async/Await', percentage: 85 },
-        { label: 'Frontend Frameworks', percentage: 80 }
-      ]
+        { label: 'Pipelines', percentage: 75 },
+        { label: 'Environment config', percentage: 78 },
+        { label: 'Build troubleshooting', percentage: 75 },
+        { label: 'Production deploys', percentage: 72 },
+      ],
     },
     {
-      skill: 'HTML5',
-      level: 'Expert',
+      skill: 'AI / Whisper / Media Processing',
+      level: 'Proficient',
+      category: 'AI',
       details: [
-        { label: 'Semantic HTML', percentage: 85 },
-        { label: 'Accessibility', percentage: 80 },
-        { label: 'Canvas and SVG', percentage: 75 },
-        { label: 'Web APIs', percentage: 80 }
-      ]
-    },
-    {
-      skill: 'PHP',
-      level: 'Qualified',
-      details: [
-        { label: 'OOP in PHP', percentage: 75 },
-        { label: 'Database Integration', percentage: 70 },
-        { label: 'MVC Frameworks', percentage: 65 },
-        { label: 'RESTful APIs', percentage: 70 }
-      ]
-    },
-    {
-      skill: 'Vue.JS',
-      level: 'Qualified',
-      details: [
-        { label: 'Vue Components', percentage: 75 },
-        { label: 'State Management', percentage: 70 },
-        { label: 'Routing', percentage: 65 },
-        { label: 'Vue CLI', percentage: 70 }
-      ]
+        { label: 'Transcription pipelines', percentage: 82 },
+        { label: 'FFmpeg workflows', percentage: 80 },
+        { label: 'Media automation', percentage: 78 },
+        { label: 'AI integrations', percentage: 75 },
+      ],
     },
     {
       skill: 'React',
-      level: 'Expert',
+      level: 'Proficient',
+      category: 'Frontend',
       details: [
-        { label: 'Component Lifecycle', percentage: 90 },
-        { label: 'Redux', percentage: 85 },
+        { label: 'Components', percentage: 82 },
         { label: 'Hooks', percentage: 85 },
-        { label: 'Server-side Rendering', percentage: 80 }
-      ]
+        { label: 'State management', percentage: 70 },
+        { label: 'Performance / UX', percentage: 75 },
+      ],
+    },
+    {
+      skill: 'TypeScript / JavaScript',
+      level: 'Proficient',
+      category: 'Frontend',
+      details: [
+        { label: 'ES6+ / async', percentage: 82 },
+        { label: 'API consumption', percentage: 85 },
+        { label: 'Frontend integrations', percentage: 75 },
+        { label: 'Tooling', percentage: 70 },
+      ],
+    },
+    {
+      skill: 'GraphQL',
+      level: 'Proficient',
+      category: 'Backend',
+      details: [
+        { label: 'Schema basics', percentage: 65 },
+        { label: 'REST coexistence', percentage: 70 },
+        { label: 'Client/server patterns', percentage: 60 },
+        { label: 'Perf basics', percentage: 55 },
+      ],
+    },
+    {
+      skill: 'AWS',
+      level: 'Proficient',
+      category: 'Cloud',
+      details: [
+        { label: 'EC2/RDS', percentage: 65 },
+        { label: 'Lambda', percentage: 60 },
+        { label: 'CloudWatch', percentage: 60 },
+        { label: 'API Gateway', percentage: 55 },
+      ],
     },
     {
       skill: 'Angular',
-      level: 'Qualified',
+      level: 'Proficient',
+      category: 'Frontend',
       details: [
-        { label: 'Component Architecture', percentage: 75 },
-        { label: 'Directives', percentage: 70 },
-        { label: 'RxJS', percentage: 65 },
-        { label: 'Angular CLI', percentage: 70 }
-      ]
+        { label: 'Components', percentage: 60 },
+        { label: 'RxJS', percentage: 55 },
+        { label: 'Routing', percentage: 60 },
+        { label: 'CLI', percentage: 60 },
+      ],
     },
     {
-      skill: 'C++',
-      level: 'Qualified',
+      skill: 'Vue.js',
+      level: 'Proficient',
+      category: 'Frontend',
       details: [
-        { label: 'STL', percentage: 70 },
-        { label: 'Object-Oriented Programming', percentage: 65 },
-        { label: 'Memory Management', percentage: 60 },
-        { label: 'Multi-threading', percentage: 65 }
-      ]
+        { label: 'Components', percentage: 65 },
+        { label: 'Routing', percentage: 60 },
+        { label: 'State basics', percentage: 55 },
+        { label: 'CLI', percentage: 55 },
+      ],
     },
     {
-      skill: 'Tailwind',
-      level: 'Qualified',
+      skill: 'Node.js',
+      level: 'Proficient',
+      category: 'Backend',
       details: [
-        { label: 'Utility-first CSS', percentage: 80 },
-        { label: 'Responsive Design', percentage: 75 },
-        { label: 'Customization', percentage: 70 },
-        { label: 'Optimized for Speed', percentage: 75 }
-      ]
+        { label: 'Express', percentage: 60 },
+        { label: 'REST basics', percentage: 60 },
+        { label: 'Async patterns', percentage: 55 },
+        { label: 'npm/yarn', percentage: 60 },
+      ],
     },
-    {
-      skill: 'NodeJS',
-      level: 'Qualified',
-      details: [
-        { label: 'Express.js', percentage: 75 },
-        { label: 'RESTful APIs with Node', percentage: 70 },
-        { label: 'Asynchronous Programming', percentage: 65 },
-        { label: 'Package Management (npm/yarn)', percentage: 70 }
-      ]
-    }
   ];
 
+  const categories: SkillCategory[] = [
+    'Backend',
+    'Cloud',
+    'Frontend',
+    'Architecture',
+    'DevOps',
+    'AI',
+    'Other',
+  ];
+
+  const [selectedCategory, setSelectedCategory] =
+    useState<SkillCategory>('Backend');
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
 
-  const handleExpand = (skill: string) => {
-    setExpandedSkill(expandedSkill === skill ? null : skill);
-  };
+  const filteredSkills =
+    selectedCategory === 'Other'
+      ? skillsData
+      : skillsData.filter((s) => s.category === selectedCategory);
+
+  const levelToPercent = (level: SkillLevel) =>
+    level === 'Advanced' ? 90 : level === 'Proficient' ? 80 : 70;
 
   return (
-    <div className="bg-black min-h-screen text-white p-5 flex justify-center items-center p-10">
-      <div className="max-w-2xl w-full text-center grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <h2 className="text-green-500 text-3xl mb-5 lg:col-span-2">Skills</h2>
-        {skillsData.map((skillData, index) => (
-          <div key={index} className="mb-5">
-            <p className="text-green-500 mb-1">{skillData.skill}</p>
-            <motion.div
-              className="bg-green-500 h-5 rounded-full relative hover:bg-orange-500"
-              initial={{ width: 0 }}
-              animate={{ width: skillData.level === 'Expert' ? '90%' : '80%' }}
-              transition={{ duration: 1, type: 'spring', stiffness: 80 }}
-            >
-              <span className="absolute inset-0 text-black text-center leading-5">{skillData.level}</span>
-            </motion.div>
+    <div className="bg-black text-white py-12 flex justify-center">
+      <div className="w-full max-w-5xl mx-auto px-6">
+        <h5 className="text-green-500 text-center text-2xl mb-6 font-bold">
+          SKILLS
+        </h5>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {categories.map((cat) => (
             <button
-              onClick={() => handleExpand(skillData.skill)}
-              className="text-orange-500 bg-transparent border-none cursor-pointer mt-2 block mx-auto"
+              key={cat}
+              onClick={() => {
+                setSelectedCategory(cat);
+                setExpandedSkill(null);
+              }}
+              className={`px-4 py-1 rounded-full border text-sm ${
+                selectedCategory === cat
+                  ? 'border-green-500 text-green-500'
+                  : 'border-white/20 text-gray-400 hover:text-white'
+              }`}
             >
-              {expandedSkill === skillData.skill ? (
-                <FaAngleDown className="text-orange-500 transform rotate-180" />
-              ) : (
-                <FaAngleDown className="text-orange-500" />
-              )}
+              {cat}
             </button>
-            {expandedSkill === skillData.skill && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                {skillData.details.map((detail, idx) => (
-                  <div key={idx}>
-                    <p>{detail.label}: {detail.percentage}%</p>
+          ))}
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {filteredSkills.map((skillData, index) => {
+            const isOpen = expandedSkill === skillData.skill;
+            const percent = levelToPercent(skillData.level);
+
+            return (
+              <motion.div
+                key={index}
+                className="border border-white/20 rounded-xl p-6"
+                whileHover={{ borderColor: '#22c55e' }}
+              >
+                <div className="flex justify-between">
+                  <p className="text-green-500 font-bold">{skillData.skill}</p>
+                  <span className="text-xs border px-2 rounded">
+                    {skillData.level}
+                  </span>
+                </div>
+
+                <div className="mt-3 h-2 bg-white/10 rounded">
+                  <motion.div
+                    className="h-2 bg-green-500 rounded"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${percent}%` }}
+                  />
+                </div>
+
+                <button
+                  onClick={() =>
+                    setExpandedSkill(isOpen ? null : skillData.skill)
+                  }
+                  className="text-orange-500 mt-3"
+                >
+                  {isOpen ? 'Show less' : 'Show more'}
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
                     <motion.div
-                      className="bg-orange-500 h-5 rounded-full relative hover:bg-yellow-500"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${detail.percentage}%` }}
-                      transition={{ duration: 1, type: 'spring', stiffness: 80 }}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3"
                     >
-                      <span className="absolute inset-0 text-black text-center leading-5">{detail.percentage}%</span>
+                      {skillData.details.map((d, i) => (
+                        <div key={i}>
+                          <p className="text-sm">{d.label}</p>
+                          <div className="h-2 bg-white/10 rounded mt-1">
+                            <motion.div
+                              className="h-2 bg-orange-500 rounded"
+                              initial={{ width: 0 }}
+                              animate={{ width: `${d.percentage}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
                     </motion.div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

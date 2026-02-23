@@ -31,6 +31,7 @@ const AppBar: React.FC<AppBarProps> = ({ activeSection }) => {
         <li className={activeSection === 'About' ? 'active' : ''}><a href="#About" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>About</a></li>
         <li className={activeSection === 'Education' ? 'active' : ''}><a href="#Education" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>Education</a></li>
         <li className={activeSection === 'Experience' ? 'active' : ''}><a href="#Experience" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>Experience</a></li>
+        <li className={activeSection === 'MainProjects' ? 'active' : ''}><a href="#MainProjects" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>Main Projects</a></li>
         <li className={activeSection === 'Skills' ? 'active' : ''}><a href="#Skills" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>Skills</a></li>
         <li className={activeSection === 'Portfolio' ? 'active' : ''}><a href="#Portfolio" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>Portfolio</a></li>
         <li className={activeSection === 'Contact' ? 'active' : ''}><a href="#Contact" className="block py-2 px-4 lg:p-0" onClick={closeMenu}>Contact</a></li>
