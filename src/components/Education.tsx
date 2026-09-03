@@ -1,16 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Education: React.FC = () => {
-  const educationData = [
-    { year: '2022', description: 'Tecnologico Nacional de Mexico Campus Oaxaca.\nComputer Systems Engineering.' },
-    { year: '2015', description: 'Computacion del golfo Oaxaca.\nTechnician in Graphic Design.' },
-    { year: '2015', description: 'Computacion del golfo Oaxaca.\nIT Technician.' },
-  ];
+  const { t } = useLanguage();
 
   const buttonHover = {
-    backgroundColor: '#22c55e',
+    backgroundColor: 'var(--accent-color)',
     color: '#fff'
   };
 
@@ -26,34 +23,32 @@ const Education: React.FC = () => {
   };
 
   return (
-    <div style={{ 
-      backgroundColor: 'black', 
-      color: 'white', 
-      display: 'grid', 
-      gridTemplateColumns: 'auto auto', // Dos columnas de ancho automático
-      justifyContent: 'center', 
-      alignItems: 'start', // Alinear los elementos en la parte superior
+    <div style={{
+      backgroundColor: 'black',
+      color: 'white',
+      display: 'grid',
+      gridTemplateColumns: 'auto auto',
+      justifyContent: 'center',
+      alignItems: 'start',
       padding: '20px'
     }}>
-      {/* Education Section */}
       <div style={{ maxWidth: '400px', marginRight: '20px' }}>
-        <h2 style={{ color: '#22c55e', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>Education</h2>
-        {educationData.map((edu, index) => (
+        <h2 style={{ color: 'var(--accent-color)', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>{t.education.title}</h2>
+        {t.education.items.map((edu, index) => (
           <motion.div
-            key={index}
+            key={`${edu.year}-${edu.degree}-${index}`}
             style={{ marginBottom: '20px', borderLeft: '5px solid white', paddingLeft: '10px' }}
-            whileHover={{ color: '#22c55e' }}
+            whileHover={{ color: 'var(--accent-color)' }}
           >
-            <p style={{ marginBottom: '5px', fontWeight: 'bold', fontSize: '20px', color: '#22c55e' }}>{edu.year}</p>
-            <p style={{ marginBottom: '5px', fontWeight: 'bold' }}>{edu.description.split('\n')[0]}</p>
-            <p style={{ marginBottom: '5px', fontWeight: 'bold' }}>{edu.description.split('\n')[1]}</p>
+            <p style={{ marginBottom: '5px', fontWeight: 'bold', fontSize: '20px', color: 'var(--accent-color)' }}>{edu.year}</p>
+            <p style={{ marginBottom: '5px', fontWeight: 'bold' }}>{edu.school}</p>
+            <p style={{ marginBottom: '5px', fontWeight: 'bold' }}>{edu.degree}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* Social Media and Download CV Section */}
       <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h2 style={{ color: '#22c55e', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>Social Media</h2>
+        <h2 style={{ color: 'var(--accent-color)', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>{t.education.social}</h2>
         <div style={{ textAlign: 'center', marginBottom: '20px' }}>
           <a href="https://www.linkedin.com/in/felipe-canseco-lopez" target="_blank" rel="noopener noreferrer">
             <motion.button whileHover={buttonHover} style={buttonStyle}>
@@ -65,43 +60,43 @@ const Education: React.FC = () => {
               <FaGithub className="mr-2 text-xl" style={{ marginRight: '10px' }} /> Github
             </motion.button>
           </a>
-          <a href="mailto:felipe95jcl@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:feli.canseco.95@gmail.com" target="_blank" rel="noopener noreferrer">
             <motion.button whileHover={buttonHover} style={buttonStyle}>
               <FaEnvelope className="mr-2 text-xl" style={{ marginRight: '10px' }} /> Gmail
             </motion.button>
           </a>
         </div>
-        <h2 style={{ color: '#22c55e', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>Download CV</h2>
+        <h2 style={{ color: 'var(--accent-color)', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>{t.education.download}</h2>
         <div style={{ textAlign: 'center' }}>
           <div>
             <a href="https://psyc023.github.io/Cv-Felipe/FelipeCansecoEn.pdf" download>
-              <motion.button whileHover={{ backgroundColor: '#22c55e', color: '#fff' }} 
-                style={{ 
-                  color: '#22c55e', 
-                  backgroundColor: 'transparent', 
-                  border: '2px solid #22c55e', 
-                  borderRadius: '5px', 
-                  padding: '10px 20px', 
+              <motion.button whileHover={{ backgroundColor: 'var(--accent-color)', color: '#fff' }}
+                style={{
+                  color: 'var(--accent-color)',
+                  backgroundColor: 'transparent',
+                  border: '2px solid var(--accent-color)',
+                  borderRadius: '5px',
+                  padding: '10px 20px',
                   margin: '5px',
                   fontSize: '25px'
                 }}
               >
-                English CV
+                {t.education.englishCv}
               </motion.button>
             </a>
             <a href="https://psyc023.github.io/Cv-Felipe/FelipeCansecoEs.pdf" download>
-              <motion.button whileHover={{ backgroundColor: '#22c55e', color: '#fff' }} 
-                style={{ 
-                  color: '#22c55e', 
-                  backgroundColor: 'transparent', 
-                  border: '2px solid #22c55e', 
-                  borderRadius: '5px', 
-                  padding: '10px 20px', 
+              <motion.button whileHover={{ backgroundColor: 'var(--accent-color)', color: '#fff' }}
+                style={{
+                  color: 'var(--accent-color)',
+                  backgroundColor: 'transparent',
+                  border: '2px solid var(--accent-color)',
+                  borderRadius: '5px',
+                  padding: '10px 20px',
                   margin: '5px',
                   fontSize: '25px'
                 }}
               >
-                Español CV
+                {t.education.spanishCv}
               </motion.button>
             </a>
           </div>

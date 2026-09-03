@@ -2,3 +2,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@property --accent-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #22c55e;
+}
+
+:root {
+  --accent-color: #22c55e;
+}
+
+html {
+  transition: --accent-color 0.4s ease;
+}
+
+.personalize-color {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.personalize-color::-webkit-color-swatch-wrapper {
+  padding: 4px;
+}
+
+.personalize-color::-webkit-color-swatch {
+  border: none;
+  border-radius: 10px;
+}
+
+.personalize-color::-moz-color-swatch {
+  border: none;
+  border-radius: 10px;
+}
+
+@keyframes personalize-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.personalize-step {
+  animation: personalize-in 0.4s ease;
+}

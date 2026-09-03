@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
 type SkillLevel = 'Advanced' | 'Proficient' | 'Intermediate';
 
@@ -25,6 +26,7 @@ interface Skill {
 }
 
 const Skills: React.FC = () => {
+    const { t } = useLanguage();
     const skillsData: Skill[] = [
         // =========================
         // BACKEND
@@ -76,6 +78,17 @@ const Skills: React.FC = () => {
                 { label: 'Performance monitoring & fixes', percentage: 78 },
             ],
         },
+        {
+            skill: 'MySQL',
+            level: 'Proficient',
+            category: 'Backend',
+            details: [
+                { label: 'Relational modeling', percentage: 78 },
+                { label: 'Query design + maintenance', percentage: 76 },
+                { label: 'Migrations / data tasks', percentage: 72 },
+                { label: 'Performance basics', percentage: 70 },
+            ],
+        },
 
         // NEW: Stored Procedures (separado para resaltar lo que pediste)
         {
@@ -99,6 +112,39 @@ const Skills: React.FC = () => {
                 { label: 'Security basics', percentage: 80 },
                 { label: 'Caching / pagination', percentage: 78 },
                 { label: 'Testing', percentage: 85 },
+            ],
+        },
+        {
+            skill: 'SOAP',
+            level: 'Intermediate',
+            category: 'Backend',
+            details: [
+                { label: 'SOAP services / contracts', percentage: 68 },
+                { label: 'Hybrid REST + SOAP integrations', percentage: 70 },
+                { label: 'Headers / auth flows', percentage: 65 },
+                { label: 'Debugging with Postman', percentage: 72 },
+            ],
+        },
+        {
+            skill: 'JWT',
+            level: 'Proficient',
+            category: 'Backend',
+            details: [
+                { label: 'Bearer token authentication', percentage: 82 },
+                { label: 'AuthN/AuthZ in APIs', percentage: 80 },
+                { label: 'Secure header handling', percentage: 78 },
+                { label: 'Service-to-service auth', percentage: 75 },
+            ],
+        },
+        {
+            skill: 'Swagger / OpenAPI',
+            level: 'Proficient',
+            category: 'Backend',
+            details: [
+                { label: 'API contract definition', percentage: 80 },
+                { label: 'Request/response models', percentage: 82 },
+                { label: 'Documentation for consumers', percentage: 78 },
+                { label: 'Validation of integrations', percentage: 76 },
             ],
         },
 
@@ -206,6 +252,17 @@ const Skills: React.FC = () => {
                 { label: 'API integrations basics', percentage: 60 },
                 { label: 'Data handling', percentage: 58 },
                 { label: 'Tooling', percentage: 60 },
+            ],
+        },
+        {
+            skill: 'PHP',
+            level: 'Intermediate',
+            category: 'Backend',
+            details: [
+                { label: 'Backend scripts / services', percentage: 62 },
+                { label: 'API integrations basics', percentage: 60 },
+                { label: 'Legacy maintenance', percentage: 58 },
+                { label: 'SQL data access', percentage: 60 },
             ],
         },
 
@@ -395,6 +452,17 @@ const Skills: React.FC = () => {
             ],
         },
         {
+            skill: 'LLM / Prompt Engineering',
+            level: 'Proficient',
+            category: 'AI',
+            details: [
+                { label: 'LLM integration in products', percentage: 80 },
+                { label: 'Prompt design + iteration', percentage: 78 },
+                { label: 'AI data processing flows', percentage: 82 },
+                { label: 'Model orchestration basics', percentage: 75 },
+            ],
+        },
+        {
             skill: 'AI Voice / Speech Models',
             level: 'Intermediate',
             category: 'AI',
@@ -453,6 +521,39 @@ const Skills: React.FC = () => {
                 { label: 'CLI', percentage: 55 },
             ],
         },
+        {
+            skill: 'Blazor',
+            level: 'Proficient',
+            category: 'Frontend',
+            details: [
+                { label: 'Interactive web apps with .NET', percentage: 80 },
+                { label: 'Reusable UI components', percentage: 78 },
+                { label: 'REST API integration', percentage: 82 },
+                { label: 'Enterprise UI patterns', percentage: 76 },
+            ],
+        },
+        {
+            skill: 'Razor Components',
+            level: 'Proficient',
+            category: 'Frontend',
+            details: [
+                { label: 'Component composition', percentage: 78 },
+                { label: 'Reusable views / layouts', percentage: 76 },
+                { label: '.NET UI integration', percentage: 80 },
+                { label: 'Dynamic modules', percentage: 74 },
+            ],
+        },
+        {
+            skill: 'MudBlazor',
+            level: 'Proficient',
+            category: 'Frontend',
+            details: [
+                { label: 'Component customization', percentage: 78 },
+                { label: 'Consistent enterprise UX', percentage: 75 },
+                { label: 'Forms / data views', percentage: 76 },
+                { label: 'Blazor + API workflows', percentage: 80 },
+            ],
+        },
 
         // NEW: Flutter
         {
@@ -507,11 +608,17 @@ const Skills: React.FC = () => {
     const [selectedCategory, setSelectedCategory] =
         useState<SkillCategory>('Backend');
     const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
+    const [showAllSkills, setShowAllSkills] = useState(false);
 
     const filteredSkills =
         selectedCategory === 'Other'
             ? skillsData
             : skillsData.filter((s) => s.category === selectedCategory);
+
+    const visibleSkills = showAllSkills
+        ? filteredSkills
+        : filteredSkills.slice(0, 6);
+    const hasMoreSkills = filteredSkills.length > 6;
 
     const levelToPercent = (level: SkillLevel) =>
         level === 'Advanced' ? 90 : level === 'Proficient' ? 80 : 70;
@@ -519,8 +626,8 @@ const Skills: React.FC = () => {
     return (
         <div className="bg-black text-white py-12 flex justify-center">
             <div className="w-full max-w-5xl mx-auto px-6">
-                <h5 className="text-green-500 text-center text-2xl mb-6 font-bold">
-                    SKILLS
+                <h5 className="text-accent text-center text-2xl mb-6 font-bold">
+                    {t.skills.title}
                 </h5>
 
                 {/* Tabs */}
@@ -531,20 +638,21 @@ const Skills: React.FC = () => {
                             onClick={() => {
                                 setSelectedCategory(cat);
                                 setExpandedSkill(null);
+                                setShowAllSkills(false);
                             }}
                             className={`px-4 py-1 rounded-full border text-sm ${selectedCategory === cat
-                                    ? 'border-green-500 text-green-500'
+                                    ? 'border-accent text-accent'
                                     : 'border-white/20 text-gray-400 hover:text-white'
                                 }`}
                         >
-                            {cat}
+                            {t.skills.categories[cat]}
                         </button>
                     ))}
                 </div>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {filteredSkills.map((skillData, index) => {
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {visibleSkills.map((skillData, index) => {
                         const isOpen = expandedSkill === skillData.skill;
                         const percent = levelToPercent(skillData.level);
 
@@ -552,18 +660,18 @@ const Skills: React.FC = () => {
                             <motion.div
                                 key={index}
                                 className="border border-white/20 rounded-xl p-6"
-                                whileHover={{ borderColor: '#22c55e' }}
+                                whileHover={{ borderColor: 'var(--accent-color)' }}
                             >
                                 <div className="flex justify-between">
-                                    <p className="text-green-500 font-bold">{skillData.skill}</p>
+                                    <p className="text-accent font-bold">{skillData.skill}</p>
                                     <span className="text-xs border px-2 rounded">
-                                        {skillData.level}
+                                        {t.skills.levels[skillData.level]}
                                     </span>
                                 </div>
 
                                 <div className="mt-3 h-2 bg-white/10 rounded">
                                     <motion.div
-                                        className="h-2 bg-green-500 rounded"
+                                        className="h-2 bg-accent rounded"
                                         initial={{ width: 0 }}
                                         animate={{ width: `${percent}%` }}
                                     />
@@ -575,7 +683,7 @@ const Skills: React.FC = () => {
                                     }
                                     className="text-orange-500 mt-3"
                                 >
-                                    {isOpen ? 'Show less' : 'Show more'}
+                                    {isOpen ? t.common.showLess : t.common.showMore}
                                 </button>
 
                                 <AnimatePresence>
@@ -605,6 +713,29 @@ const Skills: React.FC = () => {
                         );
                     })}
                 </div>
+
+                {hasMoreSkills && (
+                    <motion.button
+                        onClick={() => setShowAllSkills(!showAllSkills)}
+                        className="text-orange-500 bg-transparent border-none cursor-pointer mt-8 mx-auto flex items-center"
+                        whileHover={{ color: 'var(--accent-color)' }}
+                    >
+                        {showAllSkills ? t.common.showLess : t.common.showMore}
+                        <svg
+                            className={`w-4 h-4 ml-1 transition-transform ${showAllSkills ? 'rotate-180' : ''}`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M10 12.586l4.293-4.293a1 1 0 011.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 12.586z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    </motion.button>
+                )}
             </div>
         </div>
     );
