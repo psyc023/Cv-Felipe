@@ -593,6 +593,28 @@ const Skills: React.FC = () => {
                 { label: 'Monitoring basics', percentage: 55 },
             ],
         },
+        {
+            skill: 'C++',
+            level: 'Intermediate',
+            category: 'Backend',
+            details: [
+                { label: 'Application / service support', percentage: 65 },
+                { label: 'Legacy code reading', percentage: 62 },
+                { label: 'Cross-platform contribution', percentage: 60 },
+                { label: 'Debugging basics', percentage: 58 },
+            ],
+        },
+        {
+            skill: 'Ruby',
+            level: 'Intermediate',
+            category: 'Backend',
+            details: [
+                { label: 'Ruby on Rails web apps', percentage: 68 },
+                { label: 'REST / backend services', percentage: 65 },
+                { label: 'Full stack contribution', percentage: 62 },
+                { label: 'SQL-backed features', percentage: 60 },
+            ],
+        },
     ];
 
     const categories: SkillCategory[] = [

@@ -31,21 +31,22 @@ export const ui = {
     },
     home: {
       hello: "Hello, I'm",
-      role: 'Sr. Full Stack Developer',
+      role: 'Senior Software Engineer',
       contact: 'Contact',
     },
     about: {
       greeting: "Hi There! I'm Felipe Canseco",
-      role: 'Senior Software Engineer | Cloud, AI & Consulting',
+      role: 'Senior Software Engineer',
       p1:
-        'Senior Software Engineer specialized in designing scalable, cloud-native, and AI-driven systems. Proven experience building distributed architectures, microservices, and high-performance APIs using .NET and modern frontend technologies.',
+        'Senior software engineer with experience in full stack development, backend systems, APIs, and distributed integrations.',
       p2:
-        'Focused on AI-powered media processing, real-time transcription, and automation pipelines, delivering reliable and production-ready solutions. Strong background in software architecture, system optimization, and event-driven workflows.',
+        'Involved in solution design, technical definition of features, service-to-service integration, incident analysis, and product evolution.',
       p3:
-        'Technical leader experienced in guiding architecture decisions, improving system stability, and collaborating with cross-functional teams to deliver scalable and maintainable business solutions.',
+        'Experience supporting development teams through technical reviews, troubleshooting, work delegation, and translating functional requirements into implementable solutions.',
       phone: 'Phone:',
       email: 'Email:',
-      languages: 'Languages: English, Spanish, Japanese, German',
+      languages:
+        'Languages: Spanish — Native · English — Professional working proficiency (TOEFL ITP) · Japanese — N4 · German — Limited working proficiency',
       location: 'Location: Oaxaca, Mexico',
       remote: 'Remote: Available',
     },
@@ -58,17 +59,17 @@ export const ui = {
       items: [
         {
           year: '2022',
-          school: 'Tecnologico Nacional de Mexico Campus Oaxaca.',
+          school: 'Tecnológico Nacional de México, Campus Oaxaca.',
           degree: 'Computer Systems Engineering.',
         },
         {
           year: '2015',
-          school: 'Computacion del golfo Oaxaca.',
-          degree: 'Technician in Graphic Design.',
+          school: 'Computación del Golfo Oaxaca.',
+          degree: 'Technical Diploma in Graphic Design.',
         },
         {
           year: '2015',
-          school: 'Computacion del golfo Oaxaca.',
+          school: 'Computación del Golfo Oaxaca.',
           degree: 'IT Technician.',
         },
       ],
@@ -177,21 +178,22 @@ export const ui = {
     },
     home: {
       hello: 'Hola, soy',
-      role: 'Sr. Desarrollador Full Stack',
+      role: 'Ingeniero de Software Senior',
       contact: 'Contacto',
     },
     about: {
       greeting: '¡Hola! Soy Felipe Canseco',
-      role: 'Ingeniero de Software Senior | Cloud, IA y Consultoría',
+      role: 'Ingeniero de Software Senior',
       p1:
-        'Ingeniero de software senior especializado en el diseño de sistemas escalables, nativos en la nube e impulsados por IA. Experiencia comprobada construyendo arquitecturas distribuidas, microservicios y APIs de alto rendimiento con .NET y tecnologías frontend modernas.',
+        'Desarrollador de software senior con experiencia en desarrollo full stack, sistemas backend, APIs e integraciones distribuidas.',
       p2:
-        'Enfocado en procesamiento de medios con IA, transcripción en tiempo real y pipelines de automatización, entregando soluciones confiables listas para producción. Sólida trayectoria en arquitectura de software, optimización de sistemas y flujos event-driven.',
+        'Participación en diseño de soluciones, definición técnica de funcionalidades, integración entre servicios, análisis de incidencias y evolución de productos.',
       p3:
-        'Líder técnico con experiencia guiando decisiones de arquitectura, mejorando la estabilidad del sistema y colaborando con equipos multidisciplinarios para entregar soluciones de negocio escalables y mantenibles.',
+        'Experiencia apoyando equipos de desarrollo mediante revisión técnica, resolución de problemas, delegación de trabajo y traducción de requerimientos funcionales a soluciones implementables.',
       phone: 'Teléfono:',
       email: 'Correo:',
-      languages: 'Idiomas: inglés, español, japonés, alemán',
+      languages:
+        'Idiomas: Español — Nativo · Inglés — Competencia profesional (TOEFL ITP) · Japonés — N4 · Alemán — Competencia limitada',
       location: 'Ubicación: Oaxaca, México',
       remote: 'Remoto: Disponible',
     },
@@ -204,13 +206,13 @@ export const ui = {
       items: [
         {
           year: '2022',
-          school: 'Tecnológico Nacional de México Campus Oaxaca.',
+          school: 'Tecnológico Nacional de México, Campus Oaxaca.',
           degree: 'Ingeniería en Sistemas Computacionales.',
         },
         {
           year: '2015',
           school: 'Computación del Golfo Oaxaca.',
-          degree: 'Técnico en Diseño Gráfico.',
+          degree: 'Diplomado Técnico en Diseño Gráfico.',
         },
         {
           year: '2015',
@@ -323,21 +325,22 @@ export const ui = {
     },
     home: {
       hello: 'こんにちは、',
-      role: 'シニアフルスタックエンジニア',
+      role: 'シニアソフトウェアエンジニア',
       contact: 'お問い合わせ',
     },
     about: {
       greeting: 'こんにちは、Felipe Cansecoです',
-      role: 'シニアソフトウェアエンジニア | クラウド・AI・コンサルティング',
+      role: 'シニアソフトウェアエンジニア',
       p1:
-        'スケーラブルなクラウドネイティブおよびAI活用システムの設計を専門とするシニアソフトウェアエンジニアです。.NETとモダンなフロントエンド技術を用いた分散アーキテクチャ、マイクロサービス、高性能APIの構築経験があります。',
+        'フルスタック開発、バックエンドシステム、API、分散インテグレーションの経験を持つシニアソフトウェアエンジニアです。',
       p2:
-        'AIによるメディア処理、リアルタイム文字起こし、自動化パイプラインに注力し、本番環境で信頼性の高いソリューションを提供してきました。ソフトウェアアーキテクチャ、システム最適化、イベント駆動ワークフローを強みとしています。',
+        'ソリューション設計、機能の技術定義、サービス間連携、インシデント分析、プロダクトの進化に携わってきました。',
       p3:
-        'アーキテクチャの意思決定をリードし、システムの安定性を向上させ、部門横断チームと協力してスケーラブルで保守しやすいビジネスソリューションを届けるテクニカルリーダーです。',
+        'テクニカルレビュー、トラブルシューティング、作業の委任、機能要件の実装可能なソリューションへの落とし込みを通じて、開発チームを支援してきた経験があります。',
       phone: '電話:',
       email: 'メール:',
-      languages: '言語: 英語、スペイン語、日本語、ドイツ語',
+      languages:
+        '言語: スペイン語 — ネイティブ · 英語 — 実務レベル（TOEFL ITP） · 日本語 — N4 · ドイツ語 — 初級',
       location: '所在地: メキシコ・オアハカ',
       remote: 'リモート: 対応可能',
     },
@@ -356,7 +359,7 @@ export const ui = {
         {
           year: '2015',
           school: 'Computación del Golfo Oaxaca.',
-          degree: 'グラフィックデザイン技術者。',
+          degree: 'グラフィックデザイン技術ディプロマ。',
         },
         {
           year: '2015',
