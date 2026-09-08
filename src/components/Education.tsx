@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../i18n/LanguageContext';
+import './css/About.css';
 
 const Education: React.FC = () => {
   const { t } = useLanguage();
@@ -34,17 +35,24 @@ const Education: React.FC = () => {
     }}>
       <div style={{ maxWidth: '400px', marginRight: '20px' }}>
         <h2 style={{ color: 'var(--accent-color)', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>{t.education.title}</h2>
-        {t.education.items.map((edu, index) => (
+        {t.education.items.map((edu, index) => {
+          const isCurrent = 'status' in edu && Boolean(edu.status);
+          return (
           <motion.div
             key={`${edu.year}-${edu.degree}-${index}`}
-            style={{ marginBottom: '20px', borderLeft: '5px solid white', paddingLeft: '10px' }}
+            className={isCurrent ? 'education-highlight' : undefined}
+            style={isCurrent ? undefined : { marginBottom: '20px', borderLeft: '5px solid white', paddingLeft: '10px' }}
             whileHover={{ color: 'var(--accent-color)' }}
           >
-            <p style={{ marginBottom: '5px', fontWeight: 'bold', fontSize: '20px', color: 'var(--accent-color)' }}>{edu.year}</p>
+            <p style={{ marginBottom: '5px', fontWeight: 'bold', fontSize: '20px', color: 'var(--accent-color)' }}>
+              {edu.year}
+              {isCurrent ? ` · ${edu.status}` : ''}
+            </p>
             <p style={{ marginBottom: '5px', fontWeight: 'bold' }}>{edu.school}</p>
             <p style={{ marginBottom: '5px', fontWeight: 'bold' }}>{edu.degree}</p>
           </motion.div>
-        ))}
+          );
+        })}
       </div>
 
       <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -65,41 +73,6 @@ const Education: React.FC = () => {
               <FaEnvelope className="mr-2 text-xl" style={{ marginRight: '10px' }} /> Gmail
             </motion.button>
           </a>
-        </div>
-        <h2 style={{ color: 'var(--accent-color)', textAlign: 'center', fontSize: '35px', marginBottom: '20px' }}>{t.education.download}</h2>
-        <div style={{ textAlign: 'center' }}>
-          <div>
-            <a href="https://psyc023.github.io/Cv-Felipe/FelipeCansecoEn.pdf" download>
-              <motion.button whileHover={{ backgroundColor: 'var(--accent-color)', color: '#fff' }}
-                style={{
-                  color: 'var(--accent-color)',
-                  backgroundColor: 'transparent',
-                  border: '2px solid var(--accent-color)',
-                  borderRadius: '5px',
-                  padding: '10px 20px',
-                  margin: '5px',
-                  fontSize: '25px'
-                }}
-              >
-                {t.education.englishCv}
-              </motion.button>
-            </a>
-            <a href="https://psyc023.github.io/Cv-Felipe/FelipeCansecoEs.pdf" download>
-              <motion.button whileHover={{ backgroundColor: 'var(--accent-color)', color: '#fff' }}
-                style={{
-                  color: 'var(--accent-color)',
-                  backgroundColor: 'transparent',
-                  border: '2px solid var(--accent-color)',
-                  borderRadius: '5px',
-                  padding: '10px 20px',
-                  margin: '5px',
-                  fontSize: '25px'
-                }}
-              >
-                {t.education.spanishCv}
-              </motion.button>
-            </a>
-          </div>
         </div>
       </div>
     </div>

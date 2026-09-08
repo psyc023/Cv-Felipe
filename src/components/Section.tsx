@@ -12,10 +12,10 @@ const Section: React.FC<SectionProps> = ({ title, id, className, children }) => 
   return (
     <motion.div
       id={id}
-      className={`${className}`} 
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      className={`${className ?? ''}`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.35 }}
       viewport={{ once: true }}
     >
      

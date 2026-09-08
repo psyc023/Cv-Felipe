@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   const scrollToContact = () => {
     const contactSection = document.getElementById('Contact');
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({ behavior: 'auto', block: 'start' });
     }
   };
 

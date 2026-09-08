@@ -20,6 +20,11 @@ export const ui = {
       switchToJapanese: '日本語に変更',
       japaneseSoon: 'Coming soon',
     },
+    simpleView: {
+      open: 'Simple view',
+      back: 'Complete view',
+      selectLanguage: 'Language',
+    },
     common: {
       showMore: 'Show more',
       showLess: 'Show less',
@@ -45,18 +50,30 @@ export const ui = {
         'Experience supporting development teams through technical reviews, troubleshooting, work delegation, and translating functional requirements into implementable solutions.',
       phone: 'Phone:',
       email: 'Email:',
-      languages:
-        'Languages: Spanish — Native · English — Professional working proficiency (TOEFL ITP) · Japanese — N4 · German — Limited working proficiency',
+      languagesTitle: 'Languages',
+      languageItems: [
+        {
+          name: 'English',
+          level: 'Advanced',
+          detail: 'TOEFL ITP · Experience working with U.S. clients',
+        },
+        { name: 'Spanish', level: 'Native' },
+        { name: 'Japanese', level: 'N4' },
+        { name: 'German', level: 'Limited working proficiency' },
+      ],
       location: 'Location: Oaxaca, Mexico',
       remote: 'Remote: Available',
     },
     education: {
       title: 'Education',
       social: 'Social Media',
-      download: 'Download CV',
-      englishCv: 'English CV',
-      spanishCv: 'Español CV',
       items: [
+        {
+          year: '2026',
+          school: "Master's in Innovation Project Management.",
+          degree: 'Master in Business Administration.',
+          status: 'Studying',
+        },
         {
           year: '2022',
           school: 'Tecnológico Nacional de México, Campus Oaxaca.',
@@ -109,9 +126,7 @@ export const ui = {
       },
     },
     personalize: {
-      placeholder: 'Type your name',
       clear: 'Clear',
-      greeting: "It's a pleasure to meet you, {name}.",
       selectColor: 'Select a color',
       styleAdded: "I've added a little of your style to my portfolio.",
       lookAround: "Take a look around and discover what I've been working on.",
@@ -129,21 +144,14 @@ export const ui = {
     },
     contact: {
       title: 'Contact',
-      sayHello: 'Say Hello',
-      name: 'Your Name',
-      email: 'Your E-mail',
-      message: 'Message',
-      send: 'Send Message',
       info: 'Contact Info',
       hours:
         'You can contact me via email or WhatsApp from Monday to Friday, 10am to 4pm.',
-      emailLabel: 'Email:',
-      phoneLabel: 'Phone:',
-      addressLabel: 'Address:',
+      emailLabel: 'Email',
+      phoneLabel: 'Phone',
+      addressLabel: 'Address',
       address: 'Oaxaca de Juarez, Oaxaca, Mexico',
       social: 'Visit my social profile and get connected:',
-      sent: 'Message sent successfully!',
-      failed: 'Failed to send message, please try again later.',
     },
   },
   es: {
@@ -166,6 +174,11 @@ export const ui = {
       switchToEnglish: 'Switch to English',
       switchToJapanese: '日本語に変更',
       japaneseSoon: 'Próximamente',
+    },
+    simpleView: {
+      open: 'Vista simple',
+      back: 'Vista completa',
+      selectLanguage: 'Idioma',
     },
     common: {
       showMore: 'Ver más',
@@ -192,18 +205,30 @@ export const ui = {
         'Experiencia apoyando equipos de desarrollo mediante revisión técnica, resolución de problemas, delegación de trabajo y traducción de requerimientos funcionales a soluciones implementables.',
       phone: 'Teléfono:',
       email: 'Correo:',
-      languages:
-        'Idiomas: Español — Nativo · Inglés — Competencia profesional (TOEFL ITP) · Japonés — N4 · Alemán — Competencia limitada',
+      languagesTitle: 'Idiomas',
+      languageItems: [
+        {
+          name: 'Inglés',
+          level: 'Avanzado',
+          detail: 'TOEFL ITP · Experiencia trabajando con clientes de EE.UU.',
+        },
+        { name: 'Español', level: 'Nativo' },
+        { name: 'Japonés', level: 'N4' },
+        { name: 'Alemán', level: 'Competencia limitada' },
+      ],
       location: 'Ubicación: Oaxaca, México',
       remote: 'Remoto: Disponible',
     },
     education: {
       title: 'Educación',
       social: 'Redes sociales',
-      download: 'Descargar CV',
-      englishCv: 'CV en inglés',
-      spanishCv: 'CV en español',
       items: [
+        {
+          year: '2026',
+          school: 'Maestría en Dirección de Proyectos de Innovación.',
+          degree: 'Maestría en Administración de Empresas.',
+          status: 'Estudiando',
+        },
         {
           year: '2022',
           school: 'Tecnológico Nacional de México, Campus Oaxaca.',
@@ -256,9 +281,7 @@ export const ui = {
       },
     },
     personalize: {
-      placeholder: 'Escribe tu nombre',
       clear: 'Limpiar',
-      greeting: 'Es un placer conocerte, {name}.',
       selectColor: 'Selecciona un color',
       styleAdded: 'Agregué un poco de tu estilo a mi portafolio.',
       lookAround: 'Echa un vistazo y descubre en qué he estado trabajando.',
@@ -276,21 +299,14 @@ export const ui = {
     },
     contact: {
       title: 'Contacto',
-      sayHello: 'Saluda',
-      name: 'Tu nombre',
-      email: 'Tu correo',
-      message: 'Mensaje',
-      send: 'Enviar mensaje',
       info: 'Información de contacto',
       hours:
         'Puedes contactarme por correo o WhatsApp de lunes a viernes, de 10 a.m. a 4 p.m.',
-      emailLabel: 'Correo:',
-      phoneLabel: 'Teléfono:',
-      addressLabel: 'Dirección:',
+      emailLabel: 'Correo',
+      phoneLabel: 'Teléfono',
+      addressLabel: 'Dirección',
       address: 'Oaxaca de Juárez, Oaxaca, México',
       social: 'Visita mi perfil social y conéctate:',
-      sent: '¡Mensaje enviado correctamente!',
-      failed: 'No se pudo enviar el mensaje. Inténtalo más tarde.',
     },
   },
   ja: {
@@ -313,6 +329,11 @@ export const ui = {
       switchToEnglish: 'Switch to English',
       switchToJapanese: '日本語に変更',
       japaneseSoon: '近日公開',
+    },
+    simpleView: {
+      open: 'シンプル表示',
+      back: '完全表示',
+      selectLanguage: '言語',
     },
     common: {
       showMore: 'もっと見る',
@@ -339,18 +360,30 @@ export const ui = {
         'テクニカルレビュー、トラブルシューティング、作業の委任、機能要件の実装可能なソリューションへの落とし込みを通じて、開発チームを支援してきた経験があります。',
       phone: '電話:',
       email: 'メール:',
-      languages:
-        '言語: スペイン語 — ネイティブ · 英語 — 実務レベル（TOEFL ITP） · 日本語 — N4 · ドイツ語 — 初級',
+      languagesTitle: '言語',
+      languageItems: [
+        {
+          name: '英語',
+          level: '上級',
+          detail: 'TOEFL ITP · 米国クライアントとの業務経験',
+        },
+        { name: 'スペイン語', level: 'ネイティブ' },
+        { name: '日本語', level: 'N4' },
+        { name: 'ドイツ語', level: '初級' },
+      ],
       location: '所在地: メキシコ・オアハカ',
       remote: 'リモート: 対応可能',
     },
     education: {
       title: '学歴',
       social: 'SNS',
-      download: '履歴書をダウンロード',
-      englishCv: '英語版履歴書',
-      spanishCv: 'スペイン語版履歴書',
       items: [
+        {
+          year: '2026',
+          school: 'イノベーションプロジェクトマネジメント修士。',
+          degree: '経営学修士（MBA）。',
+          status: '在学中',
+        },
         {
           year: '2022',
           school: 'Tecnológico Nacional de México Campus Oaxaca.',
@@ -403,9 +436,7 @@ export const ui = {
       },
     },
     personalize: {
-      placeholder: 'お名前を入力',
       clear: 'クリア',
-      greeting: 'お会いできて光栄です、{name}さん。',
       selectColor: '色を選んでください',
       styleAdded: 'あなたのスタイルを少しポートフォリオに取り入れました。',
       lookAround: 'ぜひご覧いただき、これまでの取り組みをご覧ください。',
@@ -423,21 +454,14 @@ export const ui = {
     },
     contact: {
       title: 'お問い合わせ',
-      sayHello: 'ご連絡ください',
-      name: 'お名前',
-      email: 'メールアドレス',
-      message: 'メッセージ',
-      send: '送信する',
       info: '連絡先',
       hours:
         'メールまたはWhatsAppにて、月曜日から金曜日の午前10時〜午後4時にご連絡ください。',
-      emailLabel: 'メール:',
-      phoneLabel: '電話:',
-      addressLabel: '住所:',
+      emailLabel: 'メール',
+      phoneLabel: '電話',
+      addressLabel: '住所',
       address: 'メキシコ、オアハカ州オアハカ・デ・フアレス',
       social: 'SNSでつながる:',
-      sent: 'メッセージを送信しました。',
-      failed: '送信に失敗しました。しばらくしてからもう一度お試しください。',
     },
   },
 };

@@ -42,7 +42,16 @@ const AppBar: React.FC<AppBarProps> = ({ activeSection }) => {
       <ul className={`menu flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 absolute lg:static top-16 left-0 lg:top-auto lg:left-auto w-full lg:w-auto bg-black lg:bg-transparent transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         {items.map((item) => (
           <li key={item.id} className={activeSection === item.id ? 'active' : ''}>
-            <a href={`#${item.id}`} className="block py-2 px-4 lg:p-0" onClick={closeMenu}>
+            <a
+              href={`#${item.id}`}
+              className="block py-2 px-4 lg:p-0"
+              onClick={(e) => {
+                e.preventDefault();
+                closeMenu();
+                document.getElementById(item.id)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+                window.history.replaceState(null, '', `#${item.id}`);
+              }}
+            >
               {item.label}
             </a>
           </li>

@@ -1,0 +1,215 @@
+.simple-cv {
+  min-height: 100vh;
+  background: #111;
+  color: #f3f3f3;
+  padding: 20px 16px 72px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.simple-cv-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  max-width: 816px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0 16px;
+  background: #111;
+}
+
+.simple-cv-back {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.simple-cv-back:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.simple-cv-lang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #d4d4d4;
+}
+
+.simple-cv-lang select {
+  background: #111;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.simple-cv-inline-link {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.simple-cv-inline-link:hover {
+  color: var(--accent-color);
+}
+
+.simple-cv-page {
+  max-width: 816px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 48px 52px 64px;
+  box-shadow: 0 0 0 1px #2a2a2a, 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+
+.simple-cv-footer {
+  max-width: 816px;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.simple-cv-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.simple-cv-header h1 {
+  font-size: 34px;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.simple-cv-role {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.simple-cv-contact,
+.simple-cv-links,
+.simple-cv-langs {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #e5e5e5;
+}
+
+.simple-cv-links a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.simple-cv-page h2 {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 6px;
+  margin: 28px 0 12px;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.simple-cv-summary {
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.simple-cv-job {
+  margin-bottom: 18px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.simple-cv-job-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.simple-cv-job-title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.simple-cv-job-period {
+  font-size: 13px;
+  white-space: nowrap;
+  color: #d4d4d4;
+  margin: 0;
+  font-weight: 700;
+}
+
+.simple-cv-job ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.simple-cv-job li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.simple-cv-skill {
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.simple-cv-cert-name {
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.simple-cv-cert-meta,
+.simple-cv-edu {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.simple-cv-edu {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.simple-cv-edu-degree {
+  font-weight: 700;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .simple-cv-page {
+    padding: 28px 18px 40px;
+  }
+
+  .simple-cv-job-head {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .simple-cv-job-period {
+    white-space: normal;
+  }
+
+  .simple-cv-header h1 {
+    font-size: 26px;
+    letter-spacing: 0.06em;
+  }
+}
