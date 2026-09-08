@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaDownload } from 'react-icons/fa';
 import { Lang, useLanguage } from '../i18n/LanguageContext';
 import { simpleCv } from '../i18n/simpleCv';
 import './css/SimpleCv.css';
@@ -6,9 +7,25 @@ import './css/SimpleCv.css';
 const PORTFOLIO_URL = 'https://psyc023.github.io/Cv-Felipe';
 const GITHUB_URL = 'https://github.com/psyc023';
 
+const pdfFileByLang: Record<Lang, { href: string; filename: string }> = {
+  en: {
+    href: `${process.env.PUBLIC_URL}/CV_Felipe_Canseco_EN.pdf`,
+    filename: 'CV_Felipe_Canseco_EN.pdf',
+  },
+  es: {
+    href: `${process.env.PUBLIC_URL}/CV_Felipe_Canseco_ES.pdf`,
+    filename: 'CV_Felipe_Canseco_ES.pdf',
+  },
+  ja: {
+    href: `${process.env.PUBLIC_URL}/CV_Felipe_Canseco_EN.pdf`,
+    filename: 'CV_Felipe_Canseco_EN.pdf',
+  },
+};
+
 const SimpleCv: React.FC = () => {
   const { lang, setLang, t } = useLanguage();
   const cv = simpleCv[lang];
+  const pdf = pdfFileByLang[lang];
 
   const openFullView = () => {
     window.location.hash = 'Home';
@@ -17,18 +34,24 @@ const SimpleCv: React.FC = () => {
   return (
     <div className="simple-cv">
       <div className="simple-cv-toolbar">
-        <label className="simple-cv-lang">
-          <span>{t.simpleView.selectLanguage}</span>
-          <select
-            value={lang}
-            onChange={(e) => setLang(e.target.value as Lang)}
-            aria-label={t.simpleView.selectLanguage}
-          >
-            <option value="en">{t.languages.english}</option>
-            <option value="es">{t.languages.spanish}</option>
-            <option value="ja">{t.languages.japanese}</option>
-          </select>
-        </label>
+        <div className="simple-cv-toolbar-left">
+          <label className="simple-cv-lang">
+            <span>{t.simpleView.selectLanguage}</span>
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value as Lang)}
+              aria-label={t.simpleView.selectLanguage}
+            >
+              <option value="en">{t.languages.english}</option>
+              <option value="es">{t.languages.spanish}</option>
+              <option value="ja">{t.languages.japanese}</option>
+            </select>
+          </label>
+          <a className="simple-cv-download" href={pdf.href} download={pdf.filename}>
+            <FaDownload aria-hidden />
+            {t.simpleView.download}
+          </a>
+        </div>
         <button type="button" className="simple-cv-back" onClick={openFullView}>
           {t.simpleView.back}
         </button>
@@ -57,7 +80,11 @@ const SimpleCv: React.FC = () => {
 
         <section>
           <h2>{cv.summaryTitle}</h2>
-          <p className="simple-cv-summary">{cv.summary}</p>
+          {cv.summary.map((paragraph) => (
+            <p key={paragraph} className="simple-cv-summary">
+              {paragraph}
+            </p>
+          ))}
         </section>
 
         <section>
@@ -97,7 +124,9 @@ const SimpleCv: React.FC = () => {
         <section>
           <h2>{cv.certificationsTitle}</h2>
           <p className="simple-cv-cert-name">{cv.certificationName}</p>
-          <p className="simple-cv-cert-meta">{cv.certificationMeta}</p>
+          <p className="simple-cv-cert-meta">{cv.certificationIssuer}</p>
+          <p className="simple-cv-cert-meta">{cv.certificationDates}</p>
+          <p className="simple-cv-cert-meta">{cv.certificationId}</p>
         </section>
 
         <section>

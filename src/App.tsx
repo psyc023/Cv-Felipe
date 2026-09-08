@@ -82,7 +82,7 @@ function App() {
             <About />
           </Section>
 
-          <Section title="Education" id="Education">
+          <Section title="Education" id="Education" className="scroll-mt-16">
             <Education />
           </Section>
 

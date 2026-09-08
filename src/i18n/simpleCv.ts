@@ -20,7 +20,7 @@ export type SimpleCvCopy = {
   cvWeb: string;
   languagesLine: string;
   summaryTitle: string;
-  summary: string;
+  summary: string[];
   experienceTitle: string;
   experienceContinued: string;
   consultingTitle: string;
@@ -29,7 +29,9 @@ export type SimpleCvCopy = {
   skills: { label: string; value: string }[];
   certificationsTitle: string;
   certificationName: string;
-  certificationMeta: string;
+  certificationIssuer: string;
+  certificationDates: string;
+  certificationId: string;
   educationTitle: string;
   education: { degree: string; school: string; year: string }[];
   jobs: SimpleJob[];
@@ -308,8 +310,11 @@ export const simpleCv: Record<'en' | 'es' | 'ja', SimpleCvCopy> = {
     languagesLine:
       'Idiomas: Español - Nativo | Inglés - Competencia profesional (TOEFL ITP) | Japonés - N4 | Alemán - Competencia limitada',
     summaryTitle: 'RESUMEN PROFESIONAL',
-    summary:
-      'Desarrollador de software senior con experiencia en desarrollo full stack, sistemas backend, APIs e integraciones distribuidas. Participación en diseño de soluciones, definición técnica de funcionalidades, integración entre servicios, análisis de incidencias y evolución de productos. Experiencia apoyando equipos de desarrollo mediante revisión técnica, resolución de problemas, delegación de trabajo y traducción de requerimientos funcionales a soluciones implementables.',
+    summary: [
+      'Desarrollador de software senior con experiencia en desarrollo full stack, sistemas backend, APIs e integraciones distribuidas.',
+      'Participación en diseño de soluciones, definición técnica de funcionalidades, integración entre servicios, análisis de incidencias y evolución de productos.',
+      'Experiencia apoyando equipos de desarrollo mediante revisión técnica, resolución de problemas, delegación de trabajo y traducción de requerimientos funcionales a soluciones implementables.',
+    ],
     experienceTitle: 'EXPERIENCIA PROFESIONAL',
     experienceContinued: 'EXPERIENCIA PROFESIONAL - CONTINUACIÓN',
     consultingTitle: 'CONSULTORÍA Y PROYECTOS DE SOFTWARE',
@@ -364,9 +369,10 @@ export const simpleCv: Record<'en' | 'es' | 'ja', SimpleCvCopy> = {
       },
     ],
     certificationsTitle: 'CERTIFICACIONES',
-    certificationName: 'Claude Certified Architect - Foundations | Anthropic',
-    certificationMeta:
-      'Expedición: ago. 2026 | Vencimiento: ago. 2027 | ID de la credencial: cb87fb03-322e-4ee3-974c-297075f43d14',
+    certificationName: 'Claude Certified Architect - Foundations',
+    certificationIssuer: 'Anthropic',
+    certificationDates: 'Expedición: ago. 2026 · Vencimiento: ago. 2027',
+    certificationId: 'ID de la credencial: cb87fb03-322e-4ee3-974c-297075f43d14',
     educationTitle: 'EDUCACIÓN',
     education: [
       {
@@ -398,8 +404,11 @@ export const simpleCv: Record<'en' | 'es' | 'ja', SimpleCvCopy> = {
     languagesLine:
       'Languages: Spanish - Native | English - Professional proficiency (TOEFL ITP) | Japanese - N4 | German - Limited proficiency',
     summaryTitle: 'PROFESSIONAL SUMMARY',
-    summary:
-      'Senior software engineer with experience in full stack development, backend systems, APIs, and distributed integrations. Involved in solution design, technical definition of features, service-to-service integration, incident analysis, and product evolution. Experience supporting development teams through technical reviews, troubleshooting, work delegation, and translating functional requirements into implementable solutions.',
+    summary: [
+      'Senior software engineer with experience in full stack development, backend systems, APIs, and distributed integrations.',
+      'Involved in solution design, technical definition of features, service-to-service integration, incident analysis, and product evolution.',
+      'Experience supporting development teams through technical reviews, troubleshooting, work delegation, and translating functional requirements into implementable solutions.',
+    ],
     experienceTitle: 'PROFESSIONAL EXPERIENCE',
     experienceContinued: 'PROFESSIONAL EXPERIENCE - CONTINUED',
     consultingTitle: 'CONSULTING AND SOFTWARE PROJECTS',
@@ -454,9 +463,10 @@ export const simpleCv: Record<'en' | 'es' | 'ja', SimpleCvCopy> = {
       },
     ],
     certificationsTitle: 'CERTIFICATIONS',
-    certificationName: 'Claude Certified Architect - Foundations | Anthropic',
-    certificationMeta:
-      'Issued: Aug 2026 | Expires: Aug 2027 | Credential ID: cb87fb03-322e-4ee3-974c-297075f43d14',
+    certificationName: 'Claude Certified Architect - Foundations',
+    certificationIssuer: 'Anthropic',
+    certificationDates: 'Issued: Aug 2026 · Expires: Aug 2027',
+    certificationId: 'Credential ID: cb87fb03-322e-4ee3-974c-297075f43d14',
     educationTitle: 'EDUCATION',
     education: [
       {
@@ -488,8 +498,11 @@ export const simpleCv: Record<'en' | 'es' | 'ja', SimpleCvCopy> = {
     languagesLine:
       '言語: スペイン語 - ネイティブ | 英語 - 実務レベル（TOEFL ITP） | 日本語 - N4 | ドイツ語 - 初級',
     summaryTitle: '職務要約',
-    summary:
-      'フルスタック開発、バックエンド、API、分散インテグレーションの経験を持つシニアソフトウェアエンジニアです。ソリューション設計、機能の技術定義、サービス間連携、インシデント分析、プロダクトの進化に携わってきました。テクニカルレビュー、トラブルシューティング、作業の委任、機能要件の実装可能なソリューションへの落とし込みを通じて開発チームを支援しています。',
+    summary: [
+      'フルスタック開発、バックエンドシステム、API、分散インテグレーションの経験を持つシニアソフトウェアエンジニアです。',
+      'ソリューション設計、機能の技術定義、サービス間連携、インシデント分析、プロダクトの進化に携わってきました。',
+      'テクニカルレビュー、トラブルシューティング、作業の委任、機能要件の実装可能なソリューションへの落とし込みを通じて、開発チームを支援してきた経験があります。',
+    ],
     experienceTitle: '職務経歴',
     experienceContinued: '職務経歴（続き）',
     consultingTitle: 'コンサルティングおよびソフトウェアプロジェクト',
@@ -544,9 +557,10 @@ export const simpleCv: Record<'en' | 'es' | 'ja', SimpleCvCopy> = {
       },
     ],
     certificationsTitle: '資格・認定',
-    certificationName: 'Claude Certified Architect - Foundations | Anthropic',
-    certificationMeta:
-      '発行: 2026年8月 | 有効期限: 2027年8月 | 認定ID: cb87fb03-322e-4ee3-974c-297075f43d14',
+    certificationName: 'Claude Certified Architect - Foundations',
+    certificationIssuer: 'Anthropic',
+    certificationDates: '発行: 2026年8月 · 有効期限: 2027年8月',
+    certificationId: '認定ID: cb87fb03-322e-4ee3-974c-297075f43d14',
     educationTitle: '学歴',
     education: [
       {

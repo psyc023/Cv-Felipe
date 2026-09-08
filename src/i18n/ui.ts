@@ -24,6 +24,7 @@ export const ui = {
       open: 'Simple view',
       back: 'Complete view',
       selectLanguage: 'Language',
+      download: 'Download',
     },
     common: {
       showMore: 'Show more',
@@ -66,13 +67,17 @@ export const ui = {
     },
     education: {
       title: 'Education',
-      social: 'Social Media',
+      downloadTitle: 'Download CV',
+      esCaption: 'descargar cv en español',
+      enCaption: 'download cv in english',
+      esButton: 'LANGUAGE SPANISH',
+      enButton: 'LANGUAGE ENGLISH',
       items: [
         {
           year: '2026',
           school: "Master's in Innovation Project Management.",
           degree: 'Master in Business Administration.',
-          status: 'Studying',
+          status: 'Studying · Start in Oct',
         },
         {
           year: '2022',
@@ -103,9 +108,9 @@ export const ui = {
     certifications: {
       title: 'CERTIFICATIONS',
       badge: 'CERTIFIED',
-      name: 'Claude Certified Architect — Foundations',
+      name: 'Claude Certified Architect - Foundations',
       issuer: 'Anthropic',
-      dates: 'Issued Aug 2026 · Expires Aug 2027',
+      dates: 'Issued: Aug 2026 · Expires: Aug 2027',
       credentialId: 'Credential ID',
     },
     skills: {
@@ -179,6 +184,7 @@ export const ui = {
       open: 'Vista simple',
       back: 'Vista completa',
       selectLanguage: 'Idioma',
+      download: 'Descargar',
     },
     common: {
       showMore: 'Ver más',
@@ -221,13 +227,17 @@ export const ui = {
     },
     education: {
       title: 'Educación',
-      social: 'Redes sociales',
+      downloadTitle: 'Descargar CV',
+      esCaption: 'descargar cv en español',
+      enCaption: 'download cv in english',
+      esButton: 'IDIOMA ESPAÑOL',
+      enButton: 'IDIOMA INGLÉS',
       items: [
         {
           year: '2026',
           school: 'Maestría en Dirección de Proyectos de Innovación.',
           degree: 'Maestría en Administración de Empresas.',
-          status: 'Estudiando',
+          status: 'Estudiando · Start in Oct',
         },
         {
           year: '2022',
@@ -258,9 +268,9 @@ export const ui = {
     certifications: {
       title: 'CERTIFICACIONES',
       badge: 'CERTIFICADO',
-      name: 'Claude Certified Architect — Foundations',
+      name: 'Claude Certified Architect - Foundations',
       issuer: 'Anthropic',
-      dates: 'Expedido ago 2026 · Vence ago 2027',
+      dates: 'Expedición: ago. 2026 · Vencimiento: ago. 2027',
       credentialId: 'ID de credencial',
     },
     skills: {
@@ -334,6 +344,7 @@ export const ui = {
       open: 'シンプル表示',
       back: '完全表示',
       selectLanguage: '言語',
+      download: 'ダウンロード',
     },
     common: {
       showMore: 'もっと見る',
@@ -376,13 +387,17 @@ export const ui = {
     },
     education: {
       title: '学歴',
-      social: 'SNS',
+      downloadTitle: 'CVをダウンロード',
+      esCaption: 'descargar cv en español',
+      enCaption: 'download cv in english',
+      esButton: '言語 スペイン語',
+      enButton: '言語 英語',
       items: [
         {
           year: '2026',
           school: 'イノベーションプロジェクトマネジメント修士。',
           degree: '経営学修士（MBA）。',
-          status: '在学中',
+          status: '在学中 · Start in Oct',
         },
         {
           year: '2022',
@@ -413,9 +428,9 @@ export const ui = {
     certifications: {
       title: '資格・認定',
       badge: '認定',
-      name: 'Claude Certified Architect — Foundations',
+      name: 'Claude Certified Architect - Foundations',
       issuer: 'Anthropic',
-      dates: '発行 2026年8月 · 有効期限 2027年8月',
+      dates: '発行: 2026年8月 · 有効期限: 2027年8月',
       credentialId: '認定ID',
     },
     skills: {
